@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <title>LensCraft Photography</title>
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Professional photography services for weddings, portraits, events and commercial shoots."
+    />
+    <meta
+      name="keywords"
+      content="photography, wedding photography, portrait photographer"
+    />
+    <meta name="author" content="LensCraft" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#f5c542",
+              darkbg: "#0f0f0f",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body
+    class="bg-white text-gray-800 dark:bg-darkbg dark:text-gray-200 transition-colors duration-300"
+  >
+    <!-- ================= LOGIN ================= -->
+    <section
+      class="min-h-screen bg-gradient-to-br from-white to-gray-50 dark:from-gray-950 dark:to-gray-900 flex items-center"
+    >
+      <div class="max-w-7xl mx-auto px-6 w-full">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <!-- Left Content - Visual & Brand -->
+          <div class="relative" data-aos="fade-right">
+            <!-- Background Elements -->
+            <div
+              class="absolute -inset-12 bg-gradient-to-br from-primary/5 to-transparent rounded-3xl blur-3xl"
+            ></div>
+
+            <div class="relative">
+              <!-- Brand Header -->
+              <div class="mb-12">
+                <div class="inline-flex items-center gap-3 mb-6">
+                  <div
+                    class="w-12 h-12 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-6 h-6 text-primary"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <h1 class="text-3xl font-bold">LensCraft Studio</h1>
+                </div>
+
+                <h2 class="text-6xl md:text-7xl font-black leading-tight mb-8">
+                  <span
+                    class="bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent"
+                  >
+                    Welcome
+                  </span>
+                  <br />
+                  <span
+                    class="bg-gradient-to-r from-primary via-primary/90 to-primary/70 bg-clip-text text-transparent"
+                  >
+                    Back
+                  </span>
+                </h2>
+
+                <p
+                  class="text-gray-600 dark:text-gray-400 text-lg max-w-md leading-relaxed"
+                >
+                  Access your portfolio, manage active projects, and continue
+                  your creative journey with LensCraft.
+                </p>
+              </div>
+
+              <!-- Features List -->
+              <div class="space-y-6 mt-12">
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0"
+                  >
+                    <svg
+                      class="w-5 h-5 text-primary"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="font-bold mb-1">Project Management</h4>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">
+                      Track timelines and review galleries
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0"
+                  >
+                    <svg
+                      class="w-5 h-5 text-primary"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="font-bold mb-1">Secure Galleries</h4>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">
+                      Private access to all your images
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0"
+                  >
+                    <svg
+                      class="w-5 h-5 text-primary"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="font-bold mb-1">Direct Communication</h4>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">
+                      Message your photographer directly
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Content - Login Form -->
+          <div class="relative" data-aos="fade-left">
+            <div class="max-w-md w-full h-[90vh] overflow-auto mx-auto">
+              <!-- Form Container -->
+              <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-xl p-10">
+                <!-- Form Header -->
+                <div class="text-center mb-10">
+                  <div
+                    class="w-16 h-16 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                  >
+                    <svg
+                      class="w-8 h-8 text-primary"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <h2 class="text-3xl font-bold mb-3">Welcome Back</h2>
+                  <p class="text-gray-600 dark:text-gray-400">
+                    Sign in to your LensCraft account
+                  </p>
+                </div>
+
+                <!-- Login Form -->
+                <form class="space-y-8">
+                  <!-- Email Field -->
+                  <div class="group relative">
+                    <label
+                      class="block text-sm font-medium mb-3 text-gray-700 dark:text-gray-300"
+                    >
+                      Email Address
+                    </label>
+                    <div class="relative">
+                      <div
+                        class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none"
+                      >
+                        <svg
+                          class="w-5 h-5 text-gray-400 group-focus-within:text-primary transition-colors"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                          />
+                          <path
+                            d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                          />
+                        </svg>
+                      </div>
+                      <input
+                        type="email"
+                        placeholder="you@example.com"
+                        required
+                        class="w-full pl-12 pr-4 py-4 bg-transparent border-2 border-gray-200 dark:border-gray-700 rounded-xl focus:border-primary focus:outline-none transition-colors placeholder-gray-400"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Password Field -->
+                  <div class="group relative">
+                    <div class="flex justify-between items-center mb-3">
+                      <label
+                        class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                      >
+                        Password
+                      </label>
+                      <a
+                        href="#"
+                        class="text-sm text-primary hover:underline transition-colors"
+                      >
+                        Forgot password?
+                      </a>
+                    </div>
+                    <div class="relative">
+                      <div
+                        class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none"
+                      >
+                        <svg
+                          class="w-5 h-5 text-gray-400 group-focus-within:text-primary transition-colors"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </div>
+                      <input
+                        type="password"
+                        placeholder="••••••••"
+                        required
+                        class="w-full pl-12 pr-12 py-4 bg-transparent border-2 border-gray-200 dark:border-gray-700 rounded-xl focus:border-primary focus:outline-none transition-colors placeholder-gray-400"
+                      />
+                      <button
+                        type="button"
+                        class="absolute inset-y-0 right-0 pr-4 flex items-center"
+                      >
+                        <svg
+                          class="w-5 h-5 text-gray-400 hover:text-primary transition-colors"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                          <path
+                            fill-rule="evenodd"
+                            d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Remember Me -->
+                  <div class="flex items-center">
+                    <label class="flex items-center gap-3 cursor-pointer">
+                      <div class="relative">
+                        <input type="checkbox" class="sr-only peer" />
+                        <div
+                          class="w-5 h-5 bg-gray-100 dark:bg-gray-700 border-2 border-gray-300 dark:border-gray-600 rounded peer-checked:bg-primary peer-checked:border-primary transition-colors"
+                        ></div>
+                        <svg
+                          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 text-white opacity-0 peer-checked:opacity-100 transition-opacity"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="3"
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                      </div>
+                      <span class="text-sm text-gray-700 dark:text-gray-300"
+                        >Remember me for 30 days</span
+                      >
+                    </label>
+                  </div>
+
+                  <!-- Submit Button -->
+                  <button
+                    type="submit"
+                    class="group relative w-full py-4 bg-gradient-to-r from-primary to-primary/80 text-white font-semibold rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary/20"
+                  >
+                    <div
+                      class="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 group-hover:from-primary/90 group-hover:to-primary/70 transition-all duration-300"
+                    ></div>
+                    <span
+                      class="relative flex items-center justify-center gap-3"
+                    >
+                      Sign In
+                      <svg
+                        class="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+
+                  <!-- Divider -->
+                  <div class="relative">
+                    <div class="absolute inset-0 flex items-center">
+                      <div
+                        class="w-full border-t border-gray-200 dark:border-gray-700"
+                      ></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                      <span class="px-4 bg-white dark:bg-gray-800 text-gray-500"
+                        >Or continue with</span
+                      >
+                    </div>
+                  </div>
+
+                  <!-- Social Login -->
+                  <div class="grid grid-cols-2 gap-4">
+                    <button
+                      type="button"
+                      class="flex items-center justify-center gap-3 px-4 py-3 border-2 border-gray-200 dark:border-gray-700 rounded-xl hover:border-primary hover:text-primary transition-colors"
+                    >
+                      <svg class="w-5 h-5" viewBox="0 0 24 24">
+                        <path
+                          fill="#4285F4"
+                          d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                        />
+                        <path
+                          fill="#34A853"
+                          d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                        />
+                        <path
+                          fill="#FBBC05"
+                          d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                        />
+                        <path
+                          fill="#EA4335"
+                          d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                        />
+                      </svg>
+                      <span class="text-sm font-medium">Google</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="flex items-center justify-center gap-3 px-4 py-3 border-2 border-gray-200 dark:border-gray-700 rounded-xl hover:border-primary hover:text-primary transition-colors"
+                    >
+                      <svg
+                        class="w-5 h-5"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                        />
+                      </svg>
+                      <span class="text-sm font-medium">GitHub</span>
+                    </button>
+                  </div>
+
+                  <!-- Sign Up Link -->
+                  <p
+                    class="text-center text-gray-600 dark:text-gray-400 text-sm pt-4"
+                  >
+                    Don't have an account?
+                    <a
+                      href="register.html"
+                      class="text-primary font-semibold hover:underline ml-1"
+                    >
+                      Create account
+                    </a>
+                  </p>
+                </form>
+              </div>
+
+              <!-- Security Note -->
+              <div class="mt-8 text-center">
+                <div
+                  class="inline-flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm"
+                >
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fill-rule="evenodd"
+                      d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Secure login with end-to-end encryption</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 800, once: true });
+
+      function toggleTheme() {
+        document.documentElement.classList.toggle("dark");
+      }
+
+      function toggleRTL() {
+        const html = document.documentElement;
+        html.dir = html.dir === "ltr" ? "rtl" : "ltr";
+      }
+    </script>
+  </body>
+</html>

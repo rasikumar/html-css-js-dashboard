@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Dashboard | LensCraft</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#f5c542",
+              darkbg: "#0f0f0f",
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <body class="bg-gray-100 dark:bg-darkbg text-gray-900 dark:text-gray-200">
+    <!-- ================= SIDEBAR ================= -->
+    <aside
+      class="sidebar fixed inset-y-0 left-0 w-64 bg-white dark:bg-gray-900 border-r dark:border-gray-800 p-6 hidden lg:block z-40"
+    >
+      <h2 class="text-2xl font-extrabold mb-10">LensCraft</h2>
+
+      <nav class="space-y-4 text-sm">
+        <a href="#" class="block font-semibold text-primary">Dashboard</a>
+        <a href="#" class="block hover:text-primary">Users</a>
+        <a href="#" class="block hover:text-primary">Projects</a>
+        <a href="#" class="block hover:text-primary">Bookings</a>
+        <a href="#" class="block hover:text-primary">Blog</a>
+        <a href="#" class="block hover:text-primary">Settings</a>
+      </nav>
+
+      <div class="mt-20 text-sm">
+        <a href="index.html" class="underline">Logout</a>
+      </div>
+    </aside>
+    <!-- ================= ADMIN HEADER ================= -->
+    <header
+      class="lg:ml-64 bg-white dark:bg-gray-900 border-b dark:border-gray-800 px-6 py-4 flex justify-between items-center sticky top-0 z-40"
+    >
+      <h1 class="text-xl font-semibold">Admin Dashboard</h1>
+
+      <div class="flex items-center gap-3">
+        <button
+          onclick="toggleTheme()"
+          class="text-sm border px-3 py-1 rounded"
+        >
+          Theme
+        </button>
+
+        <button onclick="toggleRTL()" class="text-sm border px-3 py-1 rounded">
+          RTL
+        </button>
+
+        <span class="text-sm font-medium">Admin</span>
+      </div>
+    </header>
+
+    <!-- ================= MAIN ================= -->
+    <main class="lg:ml-64 px-6 py-10 space-y-16">
+      <!-- ================= STATS ================= -->
+      <section class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow">
+          <p class="text-sm text-gray-500">Total Users</p>
+          <h3 class="text-3xl font-extrabold mt-2">1,248</h3>
+        </div>
+
+        <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow">
+          <p class="text-sm text-gray-500">Bookings</p>
+          <h3 class="text-3xl font-extrabold mt-2">312</h3>
+        </div>
+
+        <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow">
+          <p class="text-sm text-gray-500">Active Projects</p>
+          <h3 class="text-3xl font-extrabold mt-2">48</h3>
+        </div>
+
+        <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow">
+          <p class="text-sm text-gray-500">Messages</p>
+          <h3 class="text-3xl font-extrabold mt-2">19</h3>
+        </div>
+      </section>
+      <!-- ================= ANALYTICS ================= -->
+      <section class="grid lg:grid-cols-3 gap-8">
+        <!-- Revenue / Bookings Trend -->
+        <div
+          class="lg:col-span-2 bg-white dark:bg-gray-900 p-8 rounded-2xl shadow"
+        >
+          <h2 class="text-xl font-bold mb-6">Bookings Overview</h2>
+          <canvas id="bookingsChart" height="120"></canvas>
+        </div>
+
+        <!-- Service Distribution -->
+        <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow">
+          <h2 class="text-xl font-bold mb-6">Service Distribution</h2>
+          <canvas id="serviceChart" height="240"></canvas>
+        </div>
+      </section>
+      <section class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow mt-16">
+        <h2 class="text-xl font-bold mb-6">Monthly Performance</h2>
+        <canvas id="kpiChart" height="100"></canvas>
+      </section>
+      <!-- ================= TABLE ================= -->
+      <section class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow">
+        <h2 class="text-2xl font-bold mb-6">Recent Bookings</h2>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="text-left text-gray-500 border-b">
+              <tr>
+                <th class="pb-3">Client</th>
+                <th class="pb-3">Service</th>
+                <th class="pb-3">Date</th>
+                <th class="pb-3">Status</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y">
+              <tr>
+                <td class="py-4">Sarah M.</td>
+                <td>Wedding Photography</td>
+                <td>24 Mar 2025</td>
+                <td class="text-green-600">Confirmed</td>
+              </tr>
+              <tr>
+                <td class="py-4">John D.</td>
+                <td>Portrait Session</td>
+                <td>18 Mar 2025</td>
+                <td class="text-yellow-600">Pending</td>
+              </tr>
+              <tr>
+                <td class="py-4">Priya K.</td>
+                <td>Brand Shoot</td>
+                <td>12 Mar 2025</td>
+                <td class="text-red-600">Cancelled</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <!-- ================= ACTIVITY ================= -->
+      <section class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow">
+        <h2 class="text-2xl font-bold mb-6">Recent Activity</h2>
+
+        <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400">
+          <li>• New booking request from Ananya S.</li>
+          <li>• Blog post “Wedding Photography Tips” published</li>
+          <li>• User account approved: rohan@email.com</li>
+          <li>• Portfolio updated with 12 new images</li>
+        </ul>
+      </section>
+    </main>
+
+    <script>
+      function toggleTheme() {
+        document.documentElement.classList.toggle("dark");
+      }
+
+      const bookingsCtx = document.getElementById("bookingsChart");
+
+      new Chart(bookingsCtx, {
+        type: "line",
+        data: {
+          labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+          datasets: [
+            {
+              label: "Bookings",
+              data: [12, 19, 15, 28, 34, 42],
+              borderColor: "#f5c542",
+              backgroundColor: "rgba(245,197,66,0.15)",
+              fill: true,
+              tension: 0.4,
+              pointRadius: 4,
+            },
+          ],
+        },
+        options: {
+          plugins: {
+            legend: { display: false },
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              grid: { color: "rgba(0,0,0,0.05)" },
+            },
+            x: {
+              grid: { display: false },
+            },
+          },
+        },
+      });
+      const serviceCtx = document.getElementById("serviceChart");
+
+      new Chart(serviceCtx, {
+        type: "doughnut",
+        data: {
+          labels: ["Weddings", "Portraits", "Brand", "Events"],
+          datasets: [
+            {
+              data: [45, 25, 20, 10],
+              backgroundColor: ["#f5c542", "#1f2937", "#6b7280", "#9ca3af"],
+              borderWidth: 0,
+            },
+          ],
+        },
+        options: {
+          plugins: {
+            legend: {
+              position: "bottom",
+              labels: {
+                boxWidth: 12,
+              },
+            },
+          },
+          cutout: "70%",
+        },
+      });
+      const kpiCtx = document.getElementById("kpiChart");
+
+      new Chart(kpiCtx, {
+        type: "bar",
+        data: {
+          labels: ["Users", "Bookings", "Projects", "Blogs"],
+          datasets: [
+            {
+              data: [1248, 312, 48, 26],
+              backgroundColor: "#f5c542",
+              borderRadius: 8,
+            },
+          ],
+        },
+        options: {
+          plugins: {
+            legend: { display: false },
+          },
+          scales: {
+            y: { beginAtZero: true },
+          },
+        },
+      });
+
+      function toggleRTL() {
+        const html = document.documentElement;
+        html.dir = html.dir === "rtl" ? "ltr" : "rtl";
+      }
+    </script>
+  </body>
+</html>

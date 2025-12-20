@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <title>User Dashboard | LensCraft</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#f5c542",
+              darkbg: "#0f0f0f",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body class="bg-gray-100 dark:bg-darkbg text-gray-900 dark:text-gray-200">
+    <!-- ================= USER SIDEBAR ================= -->
+    <aside
+      class="sidebar fixed inset-y-0 left-0 w-64 bg-white dark:bg-gray-900 border-r dark:border-gray-800 p-6 hidden lg:block z-40"
+    >
+      <h2 class="text-2xl font-extrabold mb-10">LensCraft</h2>
+
+      <nav class="space-y-4 text-sm">
+        <a href="#" class="block font-semibold text-primary">Dashboard</a>
+        <a href="#" class="block hover:text-primary">My Projects</a>
+        <a href="#" class="block hover:text-primary">My Galleries</a>
+        <a href="#" class="block hover:text-primary">Bookings</a>
+        <a href="#" class="block hover:text-primary">Messages</a>
+        <a href="#" class="block hover:text-primary">Profile</a>
+      </nav>
+
+      <div class="mt-20 text-sm">
+        <a href="index.html" class="underline">Logout</a>
+      </div>
+    </aside>
+    <!-- ================= USER HEADER ================= -->
+    <header
+      class="lg:ml-64 bg-white dark:bg-gray-900 border-b dark:border-gray-800 px-6 py-4 flex justify-between items-center sticky top-0 z-40"
+    >
+      <h1 class="text-xl font-semibold">Welcome back, Sarah</h1>
+
+      <div class="flex items-center gap-3">
+        <button
+          onclick="toggleTheme()"
+          class="text-sm border px-3 py-1 rounded"
+        >
+          Theme
+        </button>
+
+        <button onclick="toggleRTL()" class="text-sm border px-3 py-1 rounded">
+          RTL
+        </button>
+
+        <a href="login.html" class="text-sm underline">Logout</a>
+      </div>
+    </header>
+
+    <main class="lg:ml-64 px-6 py-10 space-y-16">
+      <section class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow">
+          <p class="text-sm text-gray-500">Projects</p>
+          <h3 class="text-3xl font-extrabold mt-2">2</h3>
+        </div>
+
+        <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow">
+          <p class="text-sm text-gray-500">Upcoming Sessions</p>
+          <h3 class="text-3xl font-extrabold mt-2">1</h3>
+        </div>
+
+        <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow">
+          <p class="text-sm text-gray-500">Galleries Ready</p>
+          <h3 class="text-3xl font-extrabold mt-2">1</h3>
+        </div>
+
+        <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow">
+          <p class="text-sm text-gray-500">Messages</p>
+          <h3 class="text-3xl font-extrabold mt-2">3</h3>
+        </div>
+      </section>
+      <section class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow">
+        <h2 class="text-2xl font-bold mb-6">Project Progress</h2>
+        <canvas id="progressChart" height="120"></canvas>
+      </section>
+
+      <script>
+        const progressCtx = document.getElementById("progressChart");
+
+        new Chart(progressCtx, {
+          type: "line",
+          data: {
+            labels: ["Planning", "Shoot", "Editing", "Delivery"],
+            datasets: [
+              {
+                data: [100, 100, 60, 0],
+                borderColor: "#f5c542",
+                backgroundColor: "rgba(245,197,66,0.15)",
+                fill: true,
+                tension: 0.4,
+                pointRadius: 4,
+              },
+            ],
+          },
+          options: {
+            plugins: { legend: { display: false } },
+            scales: {
+              y: { beginAtZero: true, max: 100 },
+            },
+          },
+        });
+      </script>
+      <section class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow">
+        <h2 class="text-2xl font-bold mb-6">Upcoming Session</h2>
+
+        <div class="text-lg space-y-2 text-gray-600 dark:text-gray-400">
+          <p><strong>Date:</strong> April 10, 2025</p>
+          <p><strong>Type:</strong> Wedding Photography</p>
+          <p><strong>Location:</strong> Chennai</p>
+        </div>
+      </section>
+      <section>
+        <h2 class="text-2xl font-bold mb-6">Your Galleries</h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow">
+            <h3 class="font-semibold mb-2">Engagement Shoot</h3>
+            <p class="text-sm text-gray-500 mb-4">45 photos • Delivered</p>
+            <a href="portfolio.html" class="underline">View Gallery</a>
+          </div>
+
+          <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow">
+            <h3 class="font-semibold mb-2">Wedding Day</h3>
+            <p class="text-sm text-gray-500 mb-4">Editing in progress</p>
+            <span class="text-sm italic text-gray-400">Coming soon</span>
+          </div>
+        </div>
+      </section>
+      <section
+        class="bg-black text-white p-10 rounded-3xl flex flex-col md:flex-row justify-between items-center gap-6"
+      >
+        <div>
+          <h2 class="text-3xl font-extrabold mb-2">Need Help or Updates?</h2>
+          <p class="text-gray-400">
+            Reach out anytime — we’re here to support you.
+          </p>
+        </div>
+
+        <a
+          href="contact.html"
+          class="px-8 py-4 border border-white hover:bg-white hover:text-black transition"
+        >
+          Message Studio
+        </a>
+      </section>
+    </main>
+
+    <script>
+      function toggleTheme() {
+        document.documentElement.classList.toggle("dark");
+      }
+
+      function toggleRTL() {
+        const html = document.documentElement;
+        html.dir = html.dir === "rtl" ? "ltr" : "rtl";
+      }
+    </script>
+  </body>
+</html>

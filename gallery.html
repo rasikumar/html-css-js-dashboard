@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <title>LensCraft Photography</title>
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Professional photography services for weddings, portraits, events and commercial shoots."
+    />
+    <meta
+      name="keywords"
+      content="photography, wedding photography, portrait photographer"
+    />
+    <meta name="author" content="LensCraft" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#f5c542",
+              darkbg: "#0f0f0f",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- GLightbox CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
+    />
+  </head>
+  <body
+    class="bg-white text-gray-800 dark:bg-darkbg dark:text-gray-200 transition-colors duration-300"
+  >
+    <!-- ================= NAVBAR ================= -->
+    <header
+      class="sticky top-0 z-50 bg-white/95 dark:bg-gray-950/95 backdrop-blur-md shadow-sm border-b border-gray-100 dark:border-gray-800"
+    >
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo -->
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl flex items-center justify-center"
+            >
+              <svg
+                class="w-6 h-6 text-primary"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <h1 class="text-2xl font-bold tracking-tight">
+              <span
+                class="bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent"
+              >
+                Lens
+              </span>
+              <span class="text-primary">Craft</span>
+            </h1>
+          </div>
+
+          <!-- Desktop Menu -->
+          <nav class="hidden lg:flex items-center gap-1">
+            <!-- Home -->
+            <div class="relative group">
+              <div class="relative group">
+                <button
+                  class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-sm font-medium transition-colors group-hover:text-primary"
+                >
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
+                    />
+                  </svg>
+                  Home
+                  <svg
+                    class="w-4 h-4 transition-transform group-hover:rotate-180"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </button>
+                <div
+                  class="absolute left-0 mt-2 w-52 rounded-xl bg-white dark:bg-gray-900 shadow-xl border border-gray-100 dark:border-gray-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0"
+                >
+                  <a
+                    href="index.html"
+                    class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-t-xl"
+                  >
+                    <p class="font-medium">Home 1</p>
+                  </a>
+                  <a
+                    href="home-2.html"
+                    class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-b-xl"
+                  >
+                    <p class="font-medium">Home 2</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- About -->
+            <a
+              href="about.html"
+              class="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-sm font-medium transition-colors hover:text-primary"
+            >
+              About
+            </a>
+
+            <!-- Services -->
+            <a
+              href="service.html"
+              class="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-sm font-medium transition-colors hover:text-primary"
+            >
+              Service
+            </a>
+            <!-- Pricing -->
+            <a
+              href="pricing.html"
+              class="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-sm font-medium transition-colors hover:text-primary"
+            >
+              Pricing
+            </a>
+
+            <!-- Blog -->
+            <a
+              href="blog.html"
+              class="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-sm font-medium transition-colors hover:text-primary"
+            >
+              Blog
+            </a>
+
+            <!-- Contact -->
+            <a
+              href="contact.html"
+              class="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-sm font-medium transition-colors hover:text-primary"
+            >
+              Contact
+            </a>
+
+            <!-- Dashboard -->
+            <div class="relative group">
+              <button
+                class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-sm font-medium transition-colors group-hover:text-primary"
+              >
+                Dashboard
+                <svg
+                  class="w-4 h-4 transition-transform group-hover:rotate-180"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+              <div
+                class="absolute left-0 mt-2 w-52 rounded-xl bg-white dark:bg-gray-900 shadow-xl border border-gray-100 dark:border-gray-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0"
+              >
+                <a
+                  href="admin-dashboard.html"
+                  class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-t-xl"
+                >
+                  <div
+                    class="w-8 h-8 bg-green-500/10 rounded-lg flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-4 h-4 text-green-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="font-medium">Admin Dashboard</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">
+                      Manage content & users
+                    </p>
+                  </div>
+                </a>
+                <a
+                  href="user-dashboard.html"
+                  class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-b-xl"
+                >
+                  <div
+                    class="w-8 h-8 bg-blue-500/10 rounded-lg flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-4 h-4 text-blue-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 005 10a5.986 5.986 0 00.546 2.916A5 5 0 0010 15a5 5 0 004.546-2.084A5.986 5.986 0 0015 10a5.986 5.986 0 00-.546-2.916A5 5 0 0010 7z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="font-medium">User Dashboard</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">
+                      Your projects & galleries
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </nav>
+
+          <!-- Right Actions -->
+          <div class="flex items-center gap-3">
+            <!-- Language & Theme -->
+            <div class="flex items-center gap-2">
+              <!-- Theme Toggle -->
+              <button
+                onclick="toggleTheme()"
+                class="group relative w-10 h-10 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center justify-center transition-colors"
+              >
+                <svg
+                  class="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-primary transition-colors hidden dark:block"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <svg
+                  class="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-primary transition-colors block dark:hidden"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                  />
+                </svg>
+              </button>
+
+              <!-- RTL Toggle -->
+              <button
+                onclick="toggleRTL()"
+                class="group w-10 h-10 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center justify-center transition-colors relative"
+              >
+                <svg
+                  class="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-primary transition-colors"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M7 2a1 1 0 011 1v1h3a1 1 0 110 2H9.578a18.87 18.87 0 01-1.724 4.78c.29.354.596.696.914 1.026a1 1 0 11-1.44 1.389c-.188-.196-.373-.396-.554-.6a19.098 19.098 0 01-3.107 3.567 1 1 0 01-1.334-1.49 17.087 17.087 0 003.13-3.733 18.992 18.992 0 01-1.487-2.494 1 1 0 111.79-.89c.234.47.489.928.764 1.372.417-.934.752-1.913.997-2.927H3a1 1 0 110-2h3V3a1 1 0 011-1zm6 6a1 1 0 01.894.553l2.991 5.982a.839.839 0 01.02.037l.99 1.98a1 1 0 11-1.79.895L15.383 16h-4.764l-.724 1.447a1 1 0 11-1.788-.894l.99-1.98.019-.038 2.99-5.982A1 1 0 0113 8zm-1.382 6h2.764L13 11.236 11.618 14z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span
+                  class="absolute -top-1 -right-1 w-4 h-4 bg-primary text-white text-xs rounded-full flex items-center justify-center text-[10px]"
+                  >RTL</span
+                >
+              </button>
+            </div>
+
+            <!-- Auth Buttons -->
+            <div class="flex items-center gap-2">
+              <a
+                href="login.html"
+                class="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 hover:border-primary hover:text-primary text-sm font-medium transition-colors"
+              >
+                Login
+              </a>
+              <a
+                href="register.html"
+                class="group relative px-5 py-2 bg-gradient-to-r from-primary to-primary/80 text-white font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 text-sm"
+              >
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 group-hover:from-primary/90 group-hover:to-primary/70 transition-all duration-300"
+                ></div>
+                <span class="relative">Register</span>
+              </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button
+              class="lg:hidden w-10 h-10 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center justify-center transition-colors"
+            >
+              <svg
+                class="w-6 h-6 text-gray-600 dark:text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div
+          class="lg:hidden mt-4 pb-4 border-t border-gray-100 dark:border-gray-800 hidden"
+          id="mobileMenu"
+        >
+          <div class="pt-4 space-y-1">
+            <a
+              href="index.html"
+              class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
+                />
+              </svg>
+              Home
+            </a>
+            <a
+              href="about.html"
+              class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              About
+            </a>
+            <a
+              href="service.html"
+              class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              Services
+            </a>
+            <a
+              href="pricing.html"
+              class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              Pricing
+            </a>
+            <a
+              href="blog.html"
+              class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              Blog
+            </a>
+            <a
+              href="contact.html"
+              class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                />
+                <path
+                  d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                />
+              </svg>
+              Contact
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= PORTFOLIO HERO ================= -->
+    <section
+      class="relative py-40 bg-gradient-to-br from-gray-950 to-black overflow-hidden"
+    >
+      <!-- Background Elements -->
+      <div class="absolute inset-0 bg-grid-white/[0.02] bg-grid"></div>
+      <div
+        class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
+      ></div>
+      <div
+        class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"
+      ></div>
+
+      <div class="relative max-w-7xl mx-auto px-6">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 bg-primary/20 backdrop-blur-sm rounded-full mb-8"
+        >
+          <div class="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+          <span
+            class="uppercase tracking-[0.3em] text-sm text-primary font-medium"
+          >
+            Our Work
+          </span>
+        </div>
+
+        <h1 class="text-6xl md:text-8xl font-black mt-8 mb-10 leading-tight">
+          <span
+            class="bg-gradient-to-r from-white via-white to-primary bg-clip-text text-transparent"
+          >
+            Visual Narratives
+          </span>
+          <br />
+          <span
+            class="bg-gradient-to-r from-primary via-primary/90 to-white bg-clip-text text-transparent"
+          >
+            Through Time
+          </span>
+        </h1>
+
+        <p class="max-w-2xl text-gray-400 text-xl leading-relaxed">
+          A curated journey of moments, emotions, and stories captured across
+          weddings, portraits, and creative collaborations worldwide.
+        </p>
+
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap gap-4 mt-12" data-aos="fade-up">
+          <button
+            class="px-6 py-3 bg-primary text-white font-medium rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
+          >
+            All Work
+          </button>
+          <button
+            class="px-6 py-3 bg-white/10 backdrop-blur-sm text-white font-medium rounded-full transition-all duration-300 hover:bg-white/20"
+          >
+            Weddings
+          </button>
+          <button
+            class="px-6 py-3 bg-white/10 backdrop-blur-sm text-white font-medium rounded-full transition-all duration-300 hover:bg-white/20"
+          >
+            Portraits
+          </button>
+          <button
+            class="px-6 py-3 bg-white/10 backdrop-blur-sm text-white font-medium rounded-full transition-all duration-300 hover:bg-white/20"
+          >
+            Commercial
+          </button>
+          <button
+            class="px-6 py-3 bg-white/10 backdrop-blur-sm text-white font-medium rounded-full transition-all duration-300 hover:bg-white/20"
+          >
+            Editorial
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MASONRY PORTFOLIO ================= -->
+    <section class="py-32 bg-white dark:bg-gray-950">
+      <div class="max-w-7xl mx-auto px-6">
+        <!-- Stats Bar -->
+        <div
+          class="flex flex-wrap items-center justify-between gap-8 mb-16"
+          data-aos="fade-up"
+        >
+          <div class="text-center">
+            <div class="text-4xl font-bold text-primary">500+</div>
+            <div class="text-gray-600 dark:text-gray-400 text-sm">Projects</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-primary">8</div>
+            <div class="text-gray-600 dark:text-gray-400 text-sm">Years</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-primary">15+</div>
+            <div class="text-gray-600 dark:text-gray-400 text-sm">Awards</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-primary">Global</div>
+            <div class="text-gray-600 dark:text-gray-400 text-sm">Reach</div>
+          </div>
+        </div>
+
+        <!-- Masonry Grid -->
+        <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+          <!-- Wedding Story -->
+          <div class="group relative break-inside-avoid" data-aos="fade-up">
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-primary/20 to-pink-500/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-500"
+            ></div>
+            <a
+              href="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+              class="glightbox block relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-300"
+              data-gallery="portfolio"
+              data-title="Wedding Story - Santorini, Greece"
+              data-description="An intimate cliffside wedding celebration captured with natural light and emotional storytelling."
+            >
+              <div class="relative overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  class="w-full h-auto rounded-2xl transform group-hover:scale-105 transition-transform duration-700"
+                  alt="Wedding celebration in Santorini"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                ></div>
+              </div>
+              <div
+                class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+              >
+                <div class="flex items-center justify-between mb-2">
+                  <span
+                    class="text-sm font-semibold bg-primary/90 px-3 py-1 rounded-full"
+                    >Wedding</span
+                  >
+                  <span class="text-sm opacity-90">2023</span>
+                </div>
+                <h3 class="text-xl font-bold">Santorini Celebration</h3>
+                <p class="text-sm opacity-90 mt-1">
+                  Intimate cliffside wedding
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Portrait Series -->
+          <div
+            class="group relative break-inside-avoid"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-500"
+            ></div>
+            <a
+              href="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+              class="glightbox block relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-300"
+              data-gallery="portfolio"
+              data-title="Portrait Series - Urban Studio"
+              data-description="Personal portrait sessions focused on authenticity and character in a controlled studio environment."
+            >
+              <div class="relative overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  class="w-full h-auto rounded-2xl transform group-hover:scale-105 transition-transform duration-700"
+                  alt="Portrait session in urban studio"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                ></div>
+              </div>
+              <div
+                class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+              >
+                <div class="flex items-center justify-between mb-2">
+                  <span
+                    class="text-sm font-semibold bg-blue-500/90 px-3 py-1 rounded-full"
+                    >Portrait</span
+                  >
+                  <span class="text-sm opacity-90">2023</span>
+                </div>
+                <h3 class="text-xl font-bold">Urban Character</h3>
+                <p class="text-sm opacity-90 mt-1">Studio portrait session</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Editorial Shoot -->
+          <div
+            class="group relative break-inside-avoid"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-500"
+            ></div>
+            <a
+              href="https://images.unsplash.com/photo-1520975916090-3105956dac38?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+              class="glightbox block relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-300"
+              data-gallery="portfolio"
+              data-title="Editorial Fashion - London"
+              data-description="Cinematic approach to fashion photography with dramatic lighting and urban backdrop."
+            >
+              <div class="relative overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1520975916090-3105956dac38?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  class="w-full h-auto rounded-2xl transform group-hover:scale-105 transition-transform duration-700"
+                  alt="Editorial fashion shoot in London"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                ></div>
+              </div>
+              <div
+                class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+              >
+                <div class="flex items-center justify-between mb-2">
+                  <span
+                    class="text-sm font-semibold bg-purple-500/90 px-3 py-1 rounded-full"
+                    >Editorial</span
+                  >
+                  <span class="text-sm opacity-90">2022</span>
+                </div>
+                <h3 class="text-xl font-bold">Urban Fashion</h3>
+                <p class="text-sm opacity-90 mt-1">London streets campaign</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Event Coverage -->
+          <div class="group relative break-inside-avoid" data-aos="fade-up">
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-500"
+            ></div>
+            <a
+              href="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+              class="glightbox block relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-300"
+              data-gallery="portfolio"
+              data-title="Corporate Event - New York"
+              data-description="Professional event documentation for a major tech conference with minimal disruption."
+            >
+              <div class="relative overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  class="w-full h-auto rounded-2xl transform group-hover:scale-105 transition-transform duration-700"
+                  alt="Corporate event coverage in New York"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                ></div>
+              </div>
+              <div
+                class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+              >
+                <div class="flex items-center justify-between mb-2">
+                  <span
+                    class="text-sm font-semibold bg-green-500/90 px-3 py-1 rounded-full"
+                    >Event</span
+                  >
+                  <span class="text-sm opacity-90">2023</span>
+                </div>
+                <h3 class="text-xl font-bold">Tech Conference</h3>
+                <p class="text-sm opacity-90 mt-1">Corporate event coverage</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Creative Project -->
+          <div
+            class="group relative break-inside-avoid"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-500"
+            ></div>
+            <a
+              href="https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+              class="glightbox block relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-300"
+              data-gallery="portfolio"
+              data-title="Creative Exploration - Studio"
+              data-description="Experimental photography exploring light, form, and emotion through abstract composition."
+            >
+              <div class="relative overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  class="w-full h-auto rounded-2xl transform group-hover:scale-105 transition-transform duration-700"
+                  alt="Creative photography exploration"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                ></div>
+              </div>
+              <div
+                class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+              >
+                <div class="flex items-center justify-between mb-2">
+                  <span
+                    class="text-sm font-semibold bg-orange-500/90 px-3 py-1 rounded-full"
+                    >Creative</span
+                  >
+                  <span class="text-sm opacity-90">2022</span>
+                </div>
+                <h3 class="text-xl font-bold">Light & Form</h3>
+                <p class="text-sm opacity-90 mt-1">Experimental exploration</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Additional Portfolio Item -->
+          <div
+            class="group relative break-inside-avoid"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-500"
+            ></div>
+            <a
+              href="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+              class="glightbox block relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-300"
+              data-gallery="portfolio"
+              data-title="Brand Campaign - Luxury Watch"
+              data-description="Commercial photography for a luxury brand campaign focused on craftsmanship and detail."
+            >
+              <div class="relative overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  class="w-full h-auto rounded-2xl transform group-hover:scale-105 transition-transform duration-700"
+                  alt="Luxury brand commercial photography"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                ></div>
+              </div>
+              <div
+                class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+              >
+                <div class="flex items-center justify-between mb-2">
+                  <span
+                    class="text-sm font-semibold bg-cyan-500/90 px-3 py-1 rounded-full"
+                    >Commercial</span
+                  >
+                  <span class="text-sm opacity-90">2023</span>
+                </div>
+                <h3 class="text-xl font-bold">Luxury Brand</h3>
+                <p class="text-sm opacity-90 mt-1">Product campaign</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Load More Button -->
+        <div class="text-center mt-16" data-aos="fade-up">
+          <button
+            class="group relative px-10 py-4 border-2 border-primary text-primary font-semibold rounded-full overflow-hidden transition-all duration-300 hover:text-white"
+          >
+            <div
+              class="absolute inset-0 bg-primary transform translate-x-full group-hover:translate-x-0 transition-transform duration-300"
+            ></div>
+            <span class="relative flex items-center gap-3">
+              View More Projects
+              <svg
+                class="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PORTFOLIO CTA ================= -->
+    <section
+      class="relative py-40 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 overflow-hidden"
+    >
+      <!-- Background Pattern -->
+      <div
+        class="absolute inset-0 bg-grid-black/[0.02] dark:bg-grid-white/[0.02] bg-grid"
+      ></div>
+
+      <div class="relative max-w-4xl mx-auto px-6 text-center">
+        <div
+          class="inline-flex items-center gap-2 px-6 py-3 bg-primary/10 rounded-full mb-8"
+        >
+          <svg
+            class="w-5 h-5 text-primary"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <span class="text-primary font-semibold">Explore More</span>
+        </div>
+
+        <h2 class="text-5xl font-bold mb-8" data-aos="fade-up">
+          Ready to Create Your <span class="text-primary">Visual Story</span>?
+        </h2>
+
+        <p
+          class="text-gray-600 dark:text-gray-400 text-xl mb-12 max-w-2xl mx-auto"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          Interested in seeing full galleries or discussing a custom project
+          tailored to your vision?
+        </p>
+
+        <div
+          class="flex flex-col sm:flex-row gap-6 justify-center"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <a
+            href="contact.html"
+            class="group relative px-10 py-5 bg-gradient-to-r from-primary to-primary/80 text-white font-semibold rounded-full overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 group-hover:from-primary/90 group-hover:to-primary/70 transition-all duration-300"
+            ></div>
+            <span class="relative flex items-center justify-center gap-3">
+              Start Your Project
+              <svg
+                class="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </a>
+
+          <a
+            href="#"
+            class="group relative px-10 py-5 border-2 border-gray-800 dark:border-gray-300 text-gray-800 dark:text-gray-300 font-semibold rounded-full overflow-hidden transition-all duration-300 hover:bg-gray-800 hover:text-white dark:hover:bg-white dark:hover:text-gray-900"
+          >
+            <span class="relative flex items-center justify-center gap-3">
+              View Full Galleries
+              <svg
+                class="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-gray-950 text-gray-300">
+      <!-- Top Footer -->
+      <div
+        class="max-w-7xl mx-auto px-6 py-20 grid gap-12 sm:grid-cols-2 lg:grid-cols-4"
+      >
+        <!-- Brand -->
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-4">LensCraft</h3>
+          <p class="text-sm text-gray-400 mb-6">
+            LensCraft is a professional photography studio delivering timeless,
+            story-driven visuals for weddings, brands, and events.
+          </p>
+
+          <!-- Social Icons -->
+          <div class="flex gap-4">
+            <a
+              href="#"
+              class="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-primary hover:text-black transition"
+              >Fb</a
+            >
+            <a
+              href="#"
+              class="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-primary hover:text-black transition"
+              >Ig</a
+            >
+            <a
+              href="#"
+              class="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-primary hover:text-black transition"
+              >Tw</a
+            >
+            <a
+              href="#"
+              class="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-primary hover:text-black transition"
+              >Ln</a
+            >
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div>
+          <h4 class="font-semibold text-white mb-4">Company</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="#" class="hover:text-primary">Home</a></li>
+            <li><a href="#" class="hover:text-primary">About Us</a></li>
+            <li><a href="#" class="hover:text-primary">Services</a></li>
+            <li><a href="#" class="hover:text-primary">Blog</a></li>
+            <li><a href="#" class="hover:text-primary">Contact</a></li>
+            <li>
+              <a href="./links.html" class="hover:text-primary">All Links</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h4 class="font-semibold text-white mb-4">Services</h4>
+          <ul class="space-y-3 text-sm">
+            <li>Wedding Photography</li>
+            <li>Portrait Photography</li>
+            <li>Commercial Shoots</li>
+            <li>Event Coverage</li>
+            <li>Drone Photography</li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="font-semibold text-white mb-4">Contact</h4>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li>📍 Chennai, India</li>
+            <li>📧 hello@lenscraft.com</li>
+            <li>📞 +91 98765 43210</li>
+            <li>⏰ Mon – Sat: 9AM – 7PM</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div
+        class="border-t border-white/10 py-6 text-center text-sm text-gray-400"
+      >
+        © 2025 LensCraft Photography. All rights reserved.
+      </div>
+    </footer>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 800, once: true });
+
+      function toggleTheme() {
+        document.documentElement.classList.toggle("dark");
+      }
+
+      function toggleRTL() {
+        const html = document.documentElement;
+        html.dir = html.dir === "ltr" ? "rtl" : "ltr";
+      }
+    </script>
+  </body>
+</html>
