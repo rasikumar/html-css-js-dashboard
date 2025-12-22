@@ -14,7 +14,8 @@
       content="photography, wedding photography, portrait photographer"
     />
     <meta name="author" content="LensCraft" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favi.png"/>
 
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -1239,7 +1240,32 @@
       >
         <!-- Brand -->
         <div>
-          <h3 class="text-2xl font-bold text-white mb-4">LensCraft</h3>
+          <div class="flex items-center gap-3 mb-5">
+            <div
+              class="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl flex items-center justify-center"
+            >
+              <svg
+                class="w-5 h-5 md:w-6 md:h-6 text-primary"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <h1
+              class="text-xl md:text-2xl font-bold tracking-tight hidden sm:flex"
+            >
+              <span
+                class="bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent"
+                >Lens</span
+              >
+              <span class="text-primary">Craft</span>
+            </h1>
+          </div>
           <p class="text-sm text-gray-400 mb-6">
             LensCraft is a professional photography studio delivering timeless,
             story-driven visuals for weddings, brands, and events.
@@ -1247,27 +1273,55 @@
 
           <!-- Social Icons -->
           <div class="flex gap-4">
-            <a
-              href="#"
-              class="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-primary hover:text-black transition"
-              >Fb</a
-            >
-            <a
-              href="#"
-              class="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-primary hover:text-black transition"
-              >Ig</a
-            >
-            <a
-              href="#"
-              class="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-primary hover:text-black transition"
-              >Tw</a
-            >
-            <a
-              href="#"
-              class="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-primary hover:text-black transition"
-              >Ln</a
-            >
-          </div>
+  <!-- Facebook -->
+  <a
+    href="#"
+    class="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-primary hover:text-black transition"
+    aria-label="Facebook"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+      fill="currentColor" class="w-4 h-4">
+      <path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.3l-.4 3h-1.9v7A10 10 0 0 0 22 12z"/>
+    </svg>
+  </a>
+
+  <!-- Instagram -->
+  <a
+    href="#"
+    class="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-primary hover:text-black transition"
+    aria-label="Instagram"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+      fill="currentColor" class="w-4 h-4">
+      <path d="M12 2c2.7 0 3 .01 4.1.06 1.1.05 1.9.22 2.6.47a5.3 5.3 0 0 1 3 3c.25.7.42 1.5.47 2.6.05 1.1.06 1.4.06 4.1s-.01 3-.06 4.1c-.05 1.1-.22 1.9-.47 2.6a5.3 5.3 0 0 1-3 3c-.7.25-1.5.42-2.6.47-1.1.05-1.4.06-4.1.06s-3-.01-4.1-.06c-1.1-.05-1.9-.22-2.6-.47a5.3 5.3 0 0 1-3-3c-.25-.7-.42-1.5-.47-2.6C2.01 15 2 14.7 2 12s.01-3 .06-4.1c.05-1.1.22-1.9.47-2.6a5.3 5.3 0 0 1 3-3c.7-.25 1.5-.42 2.6-.47C9 2.01 9.3 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.4-.9a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/>
+    </svg>
+  </a>
+
+  <!-- Twitter (X style) -->
+  <a
+    href="#"
+    class="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-primary hover:text-black transition"
+    aria-label="Twitter"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+      fill="currentColor" class="w-4 h-4">
+      <path d="M18.9 2H22l-7.2 8.2L23 22h-6.5l-5.1-6.3L5.9 22H2l7.7-8.8L1 2h6.7l4.6 5.7L18.9 2z"/>
+    </svg>
+  </a>
+
+  <!-- LinkedIn -->
+  <a
+    href="#"
+    class="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-primary hover:text-black transition"
+    aria-label="LinkedIn"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+      fill="currentColor" class="w-4 h-4">
+      <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM3 8.98h4v12H3v-12zM9 8.98h3.8v1.64h.05c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.78 2.65 4.78 6.1v6.32h-4v-5.6c0-1.34-.02-3.07-1.87-3.07-1.88 0-2.17 1.46-2.17 2.97v5.7H9v-12z"/>
+    </svg>
+  </a>
+</div>
+
         </div>
 
         <!-- Navigation -->
