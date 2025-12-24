@@ -1,0 +1,538 @@
+<!-- ================= NAVBAR ================= -->
+<header
+  class="fixed w-full top-0 z-50 bg-white/95 dark:bg-gray-950/95 backdrop-blur-md shadow-sm border-b border-gray-100 dark:border-gray-800"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between h-16 md:h-20">
+      <!-- Logo -->
+      <div class="flex items-center gap-3">
+        <div
+          class="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl flex items-center justify-center"
+        >
+          <svg
+            class="w-5 h-5 md:w-6 md:h-6 text-primary"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </div>
+        <p class="text-xl md:text-2xl font-bold tracking-tight hidden sm:flex">
+          <span
+            class="bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent"
+            >Lens</span
+          >
+          <span class="text-primary">Craft</span>
+        </p>
+      </div>
+
+      <!-- Desktop Menu -->
+      <nav class="hidden lg:flex items-center gap-1">
+        <!-- Home -->
+        <div class="relative group">
+          <button
+            class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-sm font-medium transition-colors group-hover:text-primary"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
+              />
+            </svg>
+            Home
+            <svg
+              class="w-4 h-4 transition-transform group-hover:rotate-180"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+          <div
+            class="absolute left-0 mt-2 w-52 rounded-xl bg-white dark:bg-gray-900 shadow-xl border border-gray-100 dark:border-gray-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0"
+          >
+            <a
+              href="index.html"
+              class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-t-xl"
+            >
+              <p class="font-medium">Home 1</p>
+            </a>
+            <a
+              href="home-2.html"
+              class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-b-xl"
+            >
+              <p class="font-medium">Home 2</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- About -->
+        <a
+          href="about.html"
+          class="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-sm font-medium transition-colors hover:text-primary"
+        >
+          About
+        </a>
+
+        <!-- Services -->
+        <a
+          href="service.html"
+          class="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-sm font-medium transition-colors hover:text-primary"
+        >
+          Service
+        </a>
+
+        <!-- Pricing -->
+        <a
+          href="pricing.html"
+          class="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-sm font-medium transition-colors hover:text-primary"
+        >
+          Pricing
+        </a>
+
+        <!-- Blog -->
+        <a
+          href="blog.html"
+          class="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-sm font-medium transition-colors hover:text-primary"
+        >
+          Blog
+        </a>
+
+        <!-- Contact -->
+        <a
+          href="contact.html"
+          class="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-sm font-medium transition-colors hover:text-primary"
+        >
+          Contact
+        </a>
+
+        <!-- Dashboard -->
+        <div class="relative group">
+          <button
+            class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-sm font-medium transition-colors group-hover:text-primary"
+          >
+            Dashboard
+            <svg
+              class="w-4 h-4 transition-transform group-hover:rotate-180"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+          <div
+            class="absolute left-0 mt-2 w-52 rounded-xl bg-white dark:bg-gray-900 shadow-xl border border-gray-100 dark:border-gray-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0"
+          >
+            <a
+              href="admin-dashboard.html"
+              class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-t-xl"
+            >
+              <div
+                class="w-8 h-8 bg-green-500/10 rounded-lg flex items-center justify-center"
+              >
+                <svg
+                  class="w-4 h-4 text-green-500"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p class="font-medium">Admin Dashboard</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400">
+                  Manage content & users
+                </p>
+              </div>
+            </a>
+            <a
+              href="user-dashboard.html"
+              class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-b-xl"
+            >
+              <div
+                class="w-8 h-8 bg-blue-500/10 rounded-lg flex items-center justify-center"
+              >
+                <svg
+                  class="w-4 h-4 text-blue-500"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 005 10a5.986 5.986 0 00.546 2.916A5 5 0 0010 15a5 5 0 004.546-2.084A5.986 5.986 0 0015 10a5.986 5.986 0 00-.546-2.916A5 5 0 0010 7z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p class="font-medium">User Dashboard</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400">
+                  Your projects & galleries
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Right Actions -->
+      <div class="flex items-center gap-2 md:gap-3">
+        <!-- Language & Theme (Hidden on small mobile, shown on medium+) -->
+        <div class="hidden sm:flex items-center gap-2">
+          <!-- Theme Toggle -->
+          <button
+            onclick="toggleTheme()"
+            class="group relative w-8 h-8 md:w-10 md:h-10 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center justify-center transition-colors"
+          >
+            <svg
+              class="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-gray-400 group-hover:text-primary transition-colors hidden dark:block"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <svg
+              class="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-gray-400 group-hover:text-primary transition-colors block dark:hidden"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+              />
+            </svg>
+          </button>
+
+          <!-- RTL Toggle -->
+          <button
+            onclick="toggleRTL()"
+            class="group w-8 h-8 md:w-10 md:h-10 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center justify-center transition-colors relative"
+          >
+            <svg
+              class="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-gray-400 group-hover:text-primary transition-colors"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M7 2a1 1 0 011 1v1h3a1 1 0 110 2H9.578a18.87 18.87 0 01-1.724 4.78c.29.354.596.696.914 1.026a1 1 0 11-1.44 1.389c-.188-.196-.373-.396-.554-.6a19.098 19.098 0 01-3.107 3.567 1 1 0 01-1.334-1.49 17.087 17.087 0 003.13-3.733 18.992 18.992 0 01-1.487-2.494 1 1 0 111.79-.89c.234.47.489.928.764 1.372.417-.934.752-1.913.997-2.927H3a1 1 0 110-2h3V3a1 1 0 011-1zm6 6a1 1 0 01.894.553l2.991 5.982a.839.839 0 01.02.037l.99 1.98a1 1 0 11-1.79.895L15.383 16h-4.764l-.724 1.447a1 1 0 11-1.788-.894l.99-1.98.019-.038 2.99-5.982A1 1 0 0113 8zm-1.382 6h2.764L13 11.236 11.618 14z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <span
+              class="absolute -top-1 -right-1 w-4 h-4 bg-primary text-white text-xs rounded-full flex items-center justify-center text-[10px]"
+              >RTL</span
+            >
+          </button>
+        </div>
+
+        <!-- Auth Buttons (Hidden on small mobile, shown on medium+) -->
+        <div class="hidden md:flex items-center gap-2">
+          <a
+            href="/login.html"
+            class="px-3 py-2 md:px-4 md:py-2 rounded-lg border border-gray-300 dark:border-gray-700 hover:border-primary hover:text-primary text-sm font-medium transition-colors"
+          >
+            Login
+          </a>
+          <a
+            href="/register.html"
+            class="px-3 py-2 md:px-4 md:py-2 rounded-lg border border-gray-300 dark:border-gray-700 hover:border-primary hover:text-primary text-sm font-medium transition-colors"
+          >
+            Register
+          </a>
+          <a
+            href="/register.html"
+            class="group relative px-4 py-2 md:px-5 md:py-2 bg-gradient-to-r from-primary to-primary/80 text-white font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 text-sm"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 group-hover:from-primary/90 group-hover:to-primary/70 transition-all duration-300"
+            ></div>
+            <span class="relative">Register</span>
+          </a>
+        </div>
+
+        <!-- Mobile Auth (Small button for small screens) -->
+        <div class="md:hidden flex items-center gap-1">
+          <a
+            href="login.html"
+            class="w-8 h-8 rounded-lg border border-gray-300 dark:border-gray-700 hover:border-primary hover:text-primary flex items-center justify-center transition-colors"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                fill-rule="evenodd"
+                d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button
+          onclick="toggleMobileMenu()"
+          class="w-10 h-10 z-[999] rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center justify-center transition-colors lg:hidden"
+        >
+          <svg
+            class="w-6 h-6 text-gray-600 dark:text-gray-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div
+      class="lg:hidden mt-0 pb-4 border-t border-gray-100 dark:border-gray-800 hidden"
+      id="mobileMenu"
+    >
+      <div class="pt-4 space-y-1">
+        <a
+          href="index.html"
+          class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
+            />
+          </svg>
+          Home
+        </a>
+        <a
+          href="about.html"
+          class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              fill-rule="evenodd"
+              d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          About
+        </a>
+        <a
+          href="service.html"
+          class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              fill-rule="evenodd"
+              d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          Services
+        </a>
+        <a
+          href="pricing.html"
+          class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              fill-rule="evenodd"
+              d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          Pricing
+        </a>
+        <a
+          href="blog.html"
+          class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              fill-rule="evenodd"
+              d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          Blog
+        </a>
+        <a
+          href="contact.html"
+          class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+            />
+            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+          </svg>
+          Contact
+        </a>
+
+        <!-- Mobile Only Dashboard Links -->
+        <div class="border-t border-gray-100 dark:border-gray-800 pt-3 mt-3">
+          <p
+            class="px-4 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider"
+          >
+            Dashboard
+          </p>
+          <a
+            href="admin-dashboard.html"
+            class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          >
+            <div
+              class="w-8 h-8 bg-green-500/10 rounded-lg flex items-center justify-center"
+            >
+              <svg
+                class="w-4 h-4 text-green-500"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <div>
+              <p class="font-medium">Admin Dashboard</p>
+              <p class="text-xs text-gray-500 dark:text-gray-400">
+                Manage content & users
+              </p>
+            </div>
+          </a>
+          <a
+            href="user-dashboard.html"
+            class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          >
+            <div
+              class="w-8 h-8 bg-blue-500/10 rounded-lg flex items-center justify-center"
+            >
+              <svg
+                class="w-4 h-4 text-blue-500"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 005 10a5.986 5.986 0 00.546 2.916A5 5 0 0010 15a5 5 0 004.546-2.084A5.986 5.986 0 0015 10a5.986 5.986 0 00-.546-2.916A5 5 0 0010 7z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <div>
+              <p class="font-medium">User Dashboard</p>
+              <p class="text-xs text-gray-500 dark:text-gray-400">
+                Your projects & galleries
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Mobile Only Theme & RTL Toggle -->
+        <div
+          class="border-t border-gray-100 dark:border-gray-800 pt-3 mt-3 flex items-center gap-2"
+        >
+          <button
+            onclick="toggleTheme()"
+            class="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          >
+            <svg
+              class="w-5 h-5 text-gray-600 dark:text-gray-400 hidden dark:block"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <svg
+              class="w-5 h-5 text-gray-600 dark:text-gray-400 block dark:hidden"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+              />
+            </svg>
+            <span>Toggle Theme</span>
+          </button>
+          <button
+            onclick="toggleRTL()"
+            class="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          >
+            <svg
+              class="w-5 h-5 text-gray-600 dark:text-gray-400"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M7 2a1 1 0 011 1v1h3a1 1 0 110 2H9.578a18.87 18.87 0 01-1.724 4.78c.29.354.596.696.914 1.026a1 1 0 11-1.44 1.389c-.188-.196-.373-.396-.554-.6a19.098 19.098 0 01-3.107 3.567 1 1 0 01-1.334-1.49 17.087 17.087 0 003.13-3.733 18.992 18.992 0 01-1.487-2.494 1 1 0 111.79-.89c.234.47.489.928.764 1.372.417-.934.752-1.913.997-2.927H3a1 1 0 110-2h3V3a1 1 0 011-1zm6 6a1 1 0 01.894.553l2.991 5.982a.839.839 0 01.02.037l.99 1.98a1 1 0 11-1.79.895L15.383 16h-4.764l-.724 1.447a1 1 0 11-1.788-.894l.99-1.98.019-.038 2.99-5.982A1 1 0 0113 8zm-1.382 6h2.764L13 11.236 11.618 14z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <span>RTL Mode</span>
+          </button>
+        </div>
+
+        <!-- Mobile Only Auth Buttons -->
+        <div
+          class="border-t border-gray-100 dark:border-gray-800 pt-3 mt-3 flex flex-col gap-2"
+        >
+          <a
+            href="login.html"
+            class="flex items-center justify-center gap-2 px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 hover:border-primary hover:text-primary transition-colors"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                fill-rule="evenodd"
+                d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Login
+          </a>
+          <a
+            href="register.html"
+            class="flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-primary to-primary/80 text-white font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
+          >
+            <svg
+              class="w-5 h-5 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 3a1 1 0 00-1 1v5H4a1 1 0 100 2h5v5a1 1 0 102 0v-5h5a1 1 0 100-2h-5V4a1 1 0 00-1-1z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Register
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
