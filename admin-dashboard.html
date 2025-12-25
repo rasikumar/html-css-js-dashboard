@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/favi.png" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
       tailwind.config = {
@@ -20,15 +21,44 @@
         },
       };
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      /* Mobile sidebar animation */
+      .mobile-sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .mobile-sidebar.active {
+        transform: translateX(0);
+      }
+
+      .sidebar-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 30;
+      }
+
+      .sidebar-overlay.active {
+        display: block;
+      }
+    </style>
   </head>
 
   <body class="bg-gray-100 dark:bg-darkbg text-gray-900 dark:text-gray-200">
+    <!-- Mobile Sidebar Overlay -->
+    <div
+      class="sidebar-overlay"
+      id="sidebarOverlay"
+      onclick="closeMobileSidebar()"
+    ></div>
+
     <!-- ================= SIDEBAR ================= -->
     <aside
       class="sidebar fixed inset-y-0 left-0 w-64 bg-white dark:bg-gray-900 border-r dark:border-gray-800 p-6 hidden lg:block z-40"
     >
-      <div class="flex items-center gap-3">
+      <a href="./index.html" class="flex items-center gap-3">
         <div
           class="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl flex items-center justify-center"
         >
@@ -44,14 +74,14 @@
             />
           </svg>
         </div>
-        <h1 class="text-xl md:text-2xl font-bold tracking-tight hidden sm:flex">
+        <h1 class="text-xl md:text-2xl font-bold tracking-tight">
           <span
             class="bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent"
             >Lens</span
           >
           <span class="text-primary">Craft</span>
         </h1>
-      </div>
+      </a>
 
       <nav class="space-y-4 text-sm">
         <a href="#" class="block font-semibold text-primary">Dashboard</a>
@@ -66,214 +96,484 @@
         <a href="index.html" class="underline">Logout</a>
       </div>
     </aside>
+
+    <!-- Mobile Sidebar -->
+    <aside
+      id="mobileSidebar"
+      class="mobile-sidebar fixed inset-y-0 left-0 w-64 bg-white dark:bg-gray-900 border-r dark:border-gray-800 p-6 z-50 lg:hidden"
+    >
+      <div class="flex items-center justify-between mb-8">
+        <a href="./index.html" class="flex items-center gap-3">
+          <div
+            class="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl flex items-center justify-center"
+          >
+            <svg
+              class="w-5 h-5 md:w-6 md:h-6 text-primary"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+          <h1 class="text-xl md:text-2xl font-bold tracking-tight">
+            <span
+              class="bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent"
+              >Lens</span
+            >
+            <span class="text-primary">Craft</span>
+          </h1>
+        </a>
+        <button onclick="closeMobileSidebar()" class="text-gray-500">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="space-y-4 text-sm">
+        <a
+          href="#"
+          class="block font-semibold text-primary py-2"
+          onclick="closeMobileSidebar()"
+          >Dashboard</a
+        >
+        <a
+          href="#"
+          class="block hover:text-primary py-2"
+          onclick="closeMobileSidebar()"
+          >Users</a
+        >
+        <a
+          href="#"
+          class="block hover:text-primary py-2"
+          onclick="closeMobileSidebar()"
+          >Projects</a
+        >
+        <a
+          href="#"
+          class="block hover:text-primary py-2"
+          onclick="closeMobileSidebar()"
+          >Bookings</a
+        >
+        <a
+          href="#"
+          class="block hover:text-primary py-2"
+          onclick="closeMobileSidebar()"
+          >Blog</a
+        >
+        <a
+          href="#"
+          class="block hover:text-primary py-2"
+          onclick="closeMobileSidebar()"
+          >Settings</a
+        >
+      </nav>
+
+      <div class="mt-20 text-sm">
+        <a href="index.html" class="underline" onclick="closeMobileSidebar()"
+          >Logout</a
+        >
+      </div>
+    </aside>
+
     <!-- ================= ADMIN HEADER ================= -->
     <header
-      class="lg:ml-64 bg-white dark:bg-gray-900 border-b dark:border-gray-800 px-6 py-4 flex justify-between items-center sticky top-0 z-40"
+      class="lg:ml-64 bg-white dark:bg-gray-900 border-b dark:border-gray-800 px-4 sm:px-6 py-4 flex justify-between items-center sticky top-0 z-40"
     >
-      <h1 class="text-xl font-semibold">Admin Dashboard</h1>
+      <!-- Mobile Menu Button -->
+      <button
+        onclick="openMobileSidebar()"
+        class="lg:hidden mr-4 text-gray-600 dark:text-gray-300"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
 
-      <div class="flex items-center gap-3">
+      <h1 class="text-lg sm:text-xl font-semibold truncate">Admin Dashboard</h1>
+
+      <div class="flex items-center gap-2 sm:gap-3">
         <button
           onclick="toggleTheme()"
-          class="text-sm border px-3 py-1 rounded"
+          class="text-sm border px-2 sm:px-3 py-1 rounded text-xs sm:text-sm"
         >
           Theme
         </button>
 
-        <button onclick="toggleRTL()" class="text-sm border px-3 py-1 rounded">
+        <button
+          onclick="toggleRTL()"
+          class="text-sm border px-2 sm:px-3 py-1 rounded text-xs sm:text-sm"
+        >
           RTL
         </button>
 
-        <span class="text-sm font-medium">Admin</span>
+        <span class="text-sm font-medium hidden sm:inline">Admin</span>
+        <span class="text-sm font-medium sm:hidden">A</span>
       </div>
     </header>
 
     <!-- ================= MAIN ================= -->
-    <main class="lg:ml-64 px-6 py-10 space-y-16">
+    <main class="lg:ml-64 px-4 sm:px-6 py-6 sm:py-10 space-y-8 sm:space-y-16">
       <!-- ================= STATS ================= -->
-      <section class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow">
-          <p class="text-sm text-gray-500">Total Users</p>
-          <h3 class="text-3xl font-extrabold mt-2">1,248</h3>
+      <section
+        class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8"
+      >
+        <div
+          class="bg-white dark:bg-gray-900 p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow"
+        >
+          <p class="text-xs sm:text-sm text-gray-500">Total Users</p>
+          <h3 class="text-2xl sm:text-3xl font-extrabold mt-1 sm:mt-2">
+            1,248
+          </h3>
         </div>
 
-        <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow">
-          <p class="text-sm text-gray-500">Bookings</p>
-          <h3 class="text-3xl font-extrabold mt-2">312</h3>
+        <div
+          class="bg-white dark:bg-gray-900 p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow"
+        >
+          <p class="text-xs sm:text-sm text-gray-500">Bookings</p>
+          <h3 class="text-2xl sm:text-3xl font-extrabold mt-1 sm:mt-2">312</h3>
         </div>
 
-        <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow">
-          <p class="text-sm text-gray-500">Active Projects</p>
-          <h3 class="text-3xl font-extrabold mt-2">48</h3>
+        <div
+          class="bg-white dark:bg-gray-900 p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow"
+        >
+          <p class="text-xs sm:text-sm text-gray-500">Active Projects</p>
+          <h3 class="text-2xl sm:text-3xl font-extrabold mt-1 sm:mt-2">48</h3>
         </div>
 
-        <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow">
-          <p class="text-sm text-gray-500">Messages</p>
-          <h3 class="text-3xl font-extrabold mt-2">19</h3>
+        <div
+          class="bg-white dark:bg-gray-900 p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow"
+        >
+          <p class="text-xs sm:text-sm text-gray-500">Messages</p>
+          <h3 class="text-2xl sm:text-3xl font-extrabold mt-1 sm:mt-2">19</h3>
         </div>
       </section>
+
       <!-- ================= ANALYTICS ================= -->
-      <section class="grid lg:grid-cols-3 gap-8">
+      <section class="grid lg:grid-cols-3 gap-6 sm:gap-8">
         <!-- Revenue / Bookings Trend -->
         <div
-          class="lg:col-span-2 bg-white dark:bg-gray-900 p-8 rounded-2xl shadow"
+          class="lg:col-span-2 bg-white dark:bg-gray-900 p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl shadow"
         >
-          <h2 class="text-xl font-bold mb-6">Bookings Overview</h2>
-          <canvas id="bookingsChart" height="120"></canvas>
+          <h2 class="text-lg sm:text-xl font-bold mb-4 sm:mb-6">
+            Bookings Overview
+          </h2>
+          <div class="relative" style="height: 120px">
+            <canvas id="bookingsChart" height="120"></canvas>
+          </div>
         </div>
 
         <!-- Service Distribution -->
-        <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow">
-          <h2 class="text-xl font-bold mb-6">Service Distribution</h2>
-          <canvas id="serviceChart" height="240"></canvas>
+        <div
+          class="bg-white dark:bg-gray-900 p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl shadow"
+        >
+          <h2 class="text-lg sm:text-xl font-bold mb-4 sm:mb-6">
+            Service Distribution
+          </h2>
+          <div class="relative" style="height: 240px">
+            <canvas id="serviceChart" height="240"></canvas>
+          </div>
         </div>
       </section>
-      <section class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow mt-16">
-        <h2 class="text-xl font-bold mb-6">Monthly Performance</h2>
-        <canvas id="kpiChart" height="100"></canvas>
-      </section>
-      <!-- ================= TABLE ================= -->
-      <section class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow">
-        <h2 class="text-2xl font-bold mb-6">Recent Bookings</h2>
 
-        <div class="overflow-x-auto">
-          <table class="w-full text-sm">
+      <!-- Monthly Performance -->
+      <section
+        class="bg-white dark:bg-gray-900 p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl shadow"
+      >
+        <h2 class="text-lg sm:text-xl font-bold mb-4 sm:mb-6">
+          Monthly Performance
+        </h2>
+        <div class="relative" style="height: 100px">
+          <canvas id="kpiChart" height="100"></canvas>
+        </div>
+      </section>
+
+      <!-- ================= TABLE ================= -->
+      <section
+        class="bg-white dark:bg-gray-900 p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl shadow"
+      >
+        <h2 class="text-lg sm:text-2xl font-bold mb-4 sm:mb-6">
+          Recent Bookings
+        </h2>
+
+        <div class="overflow-x-auto -mx-2 sm:mx-0">
+          <table class="w-full text-xs sm:text-sm min-w-[500px]">
             <thead class="text-left text-gray-500 border-b">
               <tr>
-                <th class="pb-3">Client</th>
-                <th class="pb-3">Service</th>
-                <th class="pb-3">Date</th>
+                <th class="pb-3 pr-4">Client</th>
+                <th class="pb-3 pr-4">Service</th>
+                <th class="pb-3 pr-4">Date</th>
                 <th class="pb-3">Status</th>
               </tr>
             </thead>
             <tbody class="divide-y">
               <tr>
-                <td class="py-4">Sarah M.</td>
-                <td>Wedding Photography</td>
-                <td>24 Mar 2025</td>
-                <td class="text-green-600">Confirmed</td>
+                <td class="py-3 pr-4">Sarah M.</td>
+                <td class="pr-4">Wedding Photography</td>
+                <td class="pr-4">24 Mar 2025</td>
+                <td class="text-green-600 font-medium">Confirmed</td>
               </tr>
               <tr>
-                <td class="py-4">John D.</td>
-                <td>Portrait Session</td>
-                <td>18 Mar 2025</td>
-                <td class="text-yellow-600">Pending</td>
+                <td class="py-3 pr-4">John D.</td>
+                <td class="pr-4">Portrait Session</td>
+                <td class="pr-4">18 Mar 2025</td>
+                <td class="text-yellow-600 font-medium">Pending</td>
               </tr>
               <tr>
-                <td class="py-4">Priya K.</td>
-                <td>Brand Shoot</td>
-                <td>12 Mar 2025</td>
-                <td class="text-red-600">Cancelled</td>
+                <td class="py-3 pr-4">Priya K.</td>
+                <td class="pr-4">Brand Shoot</td>
+                <td class="pr-4">12 Mar 2025</td>
+                <td class="text-red-600 font-medium">Cancelled</td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-      <!-- ================= ACTIVITY ================= -->
-      <section class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow">
-        <h2 class="text-2xl font-bold mb-6">Recent Activity</h2>
 
-        <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400">
-          <li>• New booking request from Ananya S.</li>
-          <li>• Blog post “Wedding Photography Tips” published</li>
-          <li>• User account approved: rohan@email.com</li>
-          <li>• Portfolio updated with 12 new images</li>
+      <!-- ================= ACTIVITY ================= -->
+      <section
+        class="bg-white dark:bg-gray-900 p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl shadow"
+      >
+        <h2 class="text-lg sm:text-2xl font-bold mb-4 sm:mb-6">
+          Recent Activity
+        </h2>
+
+        <ul
+          class="space-y-3 text-xs sm:text-sm text-gray-600 dark:text-gray-400"
+        >
+          <li class="flex items-start">
+            <span class="text-primary mr-2">•</span>
+            <span>New booking request from Ananya S.</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-primary mr-2">•</span>
+            <span>Blog post "Wedding Photography Tips" published</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-primary mr-2">•</span>
+            <span>User account approved: rohan@email.com</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-primary mr-2">•</span>
+            <span>Portfolio updated with 12 new images</span>
+          </li>
         </ul>
       </section>
     </main>
 
     <script>
+      // Theme toggle function
       function toggleTheme() {
         document.documentElement.classList.toggle("dark");
       }
 
-      const bookingsCtx = document.getElementById("bookingsChart");
-
-      new Chart(bookingsCtx, {
-        type: "line",
-        data: {
-          labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
-          datasets: [
-            {
-              label: "Bookings",
-              data: [12, 19, 15, 28, 34, 42],
-              borderColor: "#f5c542",
-              backgroundColor: "rgba(245,197,66,0.15)",
-              fill: true,
-              tension: 0.4,
-              pointRadius: 4,
-            },
-          ],
-        },
-        options: {
-          plugins: {
-            legend: { display: false },
-          },
-          scales: {
-            y: {
-              beginAtZero: true,
-              grid: { color: "rgba(0,0,0,0.05)" },
-            },
-            x: {
-              grid: { display: false },
-            },
-          },
-        },
-      });
-      const serviceCtx = document.getElementById("serviceChart");
-
-      new Chart(serviceCtx, {
-        type: "doughnut",
-        data: {
-          labels: ["Weddings", "Portraits", "Brand", "Events"],
-          datasets: [
-            {
-              data: [45, 25, 20, 10],
-              backgroundColor: ["#f5c542", "#1f2937", "#6b7280", "#9ca3af"],
-              borderWidth: 0,
-            },
-          ],
-        },
-        options: {
-          plugins: {
-            legend: {
-              position: "bottom",
-              labels: {
-                boxWidth: 12,
-              },
-            },
-          },
-          cutout: "70%",
-        },
-      });
-      const kpiCtx = document.getElementById("kpiChart");
-
-      new Chart(kpiCtx, {
-        type: "bar",
-        data: {
-          labels: ["Users", "Bookings", "Projects", "Blogs"],
-          datasets: [
-            {
-              data: [1248, 312, 48, 26],
-              backgroundColor: "#f5c542",
-              borderRadius: 8,
-            },
-          ],
-        },
-        options: {
-          plugins: {
-            legend: { display: false },
-          },
-          scales: {
-            y: { beginAtZero: true },
-          },
-        },
-      });
-
+      // RTL toggle function
       function toggleRTL() {
         const html = document.documentElement;
         html.dir = html.dir === "rtl" ? "ltr" : "rtl";
       }
+
+      // Mobile sidebar functions
+      function openMobileSidebar() {
+        document.getElementById("mobileSidebar").classList.add("active");
+        document.getElementById("sidebarOverlay").classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeMobileSidebar() {
+        document.getElementById("mobileSidebar").classList.remove("active");
+        document.getElementById("sidebarOverlay").classList.remove("active");
+        document.body.style.overflow = "";
+      }
+
+      // Close sidebar on escape key
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          closeMobileSidebar();
+        }
+      });
+
+      // Close sidebar when clicking outside
+      document.addEventListener("click", (e) => {
+        const mobileSidebar = document.getElementById("mobileSidebar");
+        const mobileMenuButton = document.querySelector(
+          "header button.lg\\:hidden"
+        );
+
+        if (
+          mobileSidebar.classList.contains("active") &&
+          !mobileSidebar.contains(e.target) &&
+          e.target !== mobileMenuButton &&
+          !mobileMenuButton.contains(e.target)
+        ) {
+          closeMobileSidebar();
+        }
+      });
+
+      // Initialize charts
+      function initCharts() {
+        // Bookings Chart
+        const bookingsCtx = document.getElementById("bookingsChart");
+        if (bookingsCtx) {
+          new Chart(bookingsCtx, {
+            type: "line",
+            data: {
+              labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+              datasets: [
+                {
+                  label: "Bookings",
+                  data: [12, 19, 15, 28, 34, 42],
+                  borderColor: "#f5c542",
+                  backgroundColor: "rgba(245,197,66,0.15)",
+                  fill: true,
+                  tension: 0.4,
+                  pointRadius: window.innerWidth < 640 ? 3 : 4,
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {
+                legend: { display: false },
+              },
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  grid: { color: "rgba(0,0,0,0.05)" },
+                  ticks: {
+                    font: {
+                      size: window.innerWidth < 640 ? 10 : 12,
+                    },
+                  },
+                },
+                x: {
+                  grid: { display: false },
+                  ticks: {
+                    font: {
+                      size: window.innerWidth < 640 ? 10 : 12,
+                    },
+                  },
+                },
+              },
+            },
+          });
+        }
+
+        // Service Chart
+        const serviceCtx = document.getElementById("serviceChart");
+        if (serviceCtx) {
+          new Chart(serviceCtx, {
+            type: "doughnut",
+            data: {
+              labels: ["Weddings", "Portraits", "Brand", "Events"],
+              datasets: [
+                {
+                  data: [45, 25, 20, 10],
+                  backgroundColor: ["#f5c542", "#1f2937", "#6b7280", "#9ca3af"],
+                  borderWidth: 0,
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {
+                legend: {
+                  position: "bottom",
+                  labels: {
+                    boxWidth: 12,
+                    font: {
+                      size: window.innerWidth < 640 ? 10 : 12,
+                    },
+                  },
+                },
+              },
+              cutout: "70%",
+            },
+          });
+        }
+
+        // KPI Chart
+        const kpiCtx = document.getElementById("kpiChart");
+        if (kpiCtx) {
+          new Chart(kpiCtx, {
+            type: "bar",
+            data: {
+              labels: ["Users", "Bookings", "Projects", "Blogs"],
+              datasets: [
+                {
+                  data: [1248, 312, 48, 26],
+                  backgroundColor: "#f5c542",
+                  borderRadius: 6,
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {
+                legend: { display: false },
+              },
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  ticks: {
+                    font: {
+                      size: window.innerWidth < 640 ? 10 : 12,
+                    },
+                  },
+                },
+                x: {
+                  ticks: {
+                    font: {
+                      size: window.innerWidth < 640 ? 10 : 12,
+                    },
+                  },
+                },
+              },
+            },
+          });
+        }
+      }
+
+      // Initialize charts on load
+      document.addEventListener("DOMContentLoaded", initCharts);
+
+      // Reinitialize charts on window resize
+      window.addEventListener("resize", function () {
+        // Destroy existing charts
+        Chart.helpers.each(Chart.instances, function (instance) {
+          instance.destroy();
+        });
+
+        // Reinitialize charts
+        initCharts();
+      });
     </script>
   </body>
 </html>

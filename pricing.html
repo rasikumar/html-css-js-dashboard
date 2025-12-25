@@ -671,21 +671,19 @@
     </section>
 
     <div id="footer"></div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js"
+      integrity="sha512-6BTOlkauINO65nLhXhthZMtepgJSghyimIalb+crKRPhvhmsCdnIuGcVbR5/aQY2A+260iC1OPy1oCdB6pSSwQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="js/include.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/rtl.js"></script>
+    <script src="js/aos-init.js"></script>
+    <script src="js/toggle.js"></script>
 
     <!-- ================= SCRIPTS ================= -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init({ duration: 800, once: true });
-
-      function toggleTheme() {
-        document.documentElement.classList.toggle("dark");
-      }
-
-      function toggleRTL() {
-        const html = document.documentElement;
-        html.dir = html.dir === "ltr" ? "rtl" : "ltr";
-      }
-    </script>
   </body>
 </html>
