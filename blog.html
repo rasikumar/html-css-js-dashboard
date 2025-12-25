@@ -748,96 +748,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-
-    <script>
-      // Initialize AOS
-      AOS.init({
-        duration: 800,
-        offset: 100,
-        once: true,
-      });
-
-      // Mobile Menu Toggle
-      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-      const mobileMenu = document.getElementById("mobile-menu");
-
-      mobileMenuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
-
-      // Theme Toggle
-      const themeToggle = document.getElementById("theme-toggle");
-      const mobileThemeToggle = document.getElementById("mobile-theme-toggle");
-      const html = document.documentElement;
-
-      function toggleTheme() {
-        html.classList.toggle("dark");
-        const isDark = html.classList.contains("dark");
-        localStorage.setItem("theme", isDark ? "dark" : "light");
-        updateThemeIcon();
-      }
-
-      function updateThemeIcon() {
-        const isDark = html.classList.contains("dark");
-        const icons = document.querySelectorAll(
-          "#theme-toggle i, #mobile-theme-toggle i"
-        );
-        icons.forEach((icon) => {
-          icon.className = isDark ? "fas fa-sun" : "fas fa-moon";
-        });
-      }
-
-      themeToggle.addEventListener("click", toggleTheme);
-      mobileThemeToggle.addEventListener("click", toggleTheme);
-
-      // Check saved theme
-      const savedTheme = localStorage.getItem("theme") || "light";
-      if (savedTheme === "dark") {
-        html.classList.add("dark");
-      }
-      updateThemeIcon();
-
-      // Close mobile menu on link click
-      document.querySelectorAll("#mobile-menu a").forEach((link) => {
-        link.addEventListener("click", () => {
-          mobileMenu.classList.add("hidden");
-        });
-      });
-
-      // Blog filter functionality
-      document.querySelectorAll(".bg-gray-50 button").forEach((button) => {
-        button.addEventListener("click", function () {
-          // Remove active class from all buttons
-          document.querySelectorAll(".bg-gray-50 button").forEach((btn) => {
-            btn.classList.remove(
-              "bg-gradient-to-r",
-              "from-primary",
-              "to-primary/80",
-              "text-white"
-            );
-            btn.classList.add(
-              "bg-white/10",
-              "border",
-              "border-gray-300",
-              "dark:border-gray-700"
-            );
-          });
-
-          // Add active class to clicked button
-          this.classList.remove(
-            "bg-white/10",
-            "border",
-            "border-gray-300",
-            "dark:border-gray-700"
-          );
-          this.classList.add(
-            "bg-gradient-to-r",
-            "from-primary",
-            "to-primary/80",
-            "text-white"
-          );
-        });
-      });
-    </script>
+    <script src="js/include.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/rtl.js"></script>
+    <script src="js/aos-init.js"></script>
+    <script src="js/toggle.js"></script>
   </body>
 </html>
