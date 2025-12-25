@@ -88,70 +88,7 @@
   <body
     class="bg-white text-gray-800 dark:bg-darkbg dark:text-gray-200 transition-colors duration-300"
   >
-    <!-- Navbar -->
-    <nav
-      class="fixed w-full bg-white/90 dark:bg-darkbg/90 backdrop-blur-md z-50 py-4 px-4 sm:px-6 border-b border-gray-200 dark:border-gray-800"
-    >
-      <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <a href="index.html" class="text-2xl font-bold text-primary"
-          >LensCraft</a
-        >
-        <div class="hidden md:flex items-center gap-8">
-          <a href="index.html" class="hover:text-primary transition">Home</a>
-          <a href="portfolio.html" class="hover:text-primary transition"
-            >Portfolio</a
-          >
-          <a href="services.html" class="hover:text-primary transition"
-            >Services</a
-          >
-          <a href="blog.html" class="text-primary font-semibold">Blog</a>
-          <a href="contact.html" class="hover:text-primary transition"
-            >Contact</a
-          >
-          <button
-            id="theme-toggle"
-            class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800"
-          >
-            <i class="fas fa-moon"></i>
-          </button>
-        </div>
-        <button class="md:hidden text-2xl" id="mobile-menu-btn">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
-      <!-- Mobile Menu -->
-      <div
-        id="mobile-menu"
-        class="md:hidden hidden absolute top-full left-0 w-full bg-white dark:bg-darkbg shadow-lg py-4 px-6"
-      >
-        <div class="flex flex-col gap-4">
-          <a href="index.html" class="py-2 hover:text-primary transition"
-            >Home</a
-          >
-          <a href="portfolio.html" class="py-2 hover:text-primary transition"
-            >Portfolio</a
-          >
-          <a href="services.html" class="py-2 hover:text-primary transition"
-            >Services</a
-          >
-          <a href="blog.html" class="py-2 text-primary font-semibold">Blog</a>
-          <a href="contact.html" class="py-2 hover:text-primary transition"
-            >Contact</a
-          >
-          <div
-            class="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-800"
-          >
-            <span>Dark Mode</span>
-            <button
-              id="mobile-theme-toggle"
-              class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800"
-            >
-              <i class="fas fa-moon"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-    </nav>
+    <div id="navbar"></div>
 
     <!-- Add padding for fixed navbar -->
     <div class="pt-16"></div>
