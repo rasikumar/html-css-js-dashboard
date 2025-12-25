@@ -95,6 +95,9 @@
       <div class="mt-20 text-sm">
         <a href="index.html" class="underline">Logout</a>
       </div>
+      <div class="mt-4 text-sm">
+        <a href="admin-dashboard.html" class="underline">Admin Dashboard</a>
+      </div>
     </aside>
 
     <!-- ================= MOBILE SIDEBAR ================= -->
@@ -187,6 +190,9 @@
         <a href="index.html" class="underline" onclick="closeMobileSidebar()"
           >Logout</a
         >
+      </div>
+      <div class="mt-4 text-sm">
+        <a href="user-dashboard.html" class="underline">User Dashboard</a>
       </div>
     </aside>
 
@@ -365,17 +371,6 @@
     </main>
 
     <script>
-      // Theme toggle function
-      function toggleTheme() {
-        document.documentElement.classList.toggle("dark");
-      }
-
-      // RTL toggle function
-      function toggleRTL() {
-        const html = document.documentElement;
-        html.dir = html.dir === "rtl" ? "ltr" : "rtl";
-      }
-
       // Mobile sidebar functions
       function openMobileSidebar() {
         document.getElementById("mobileSidebar").classList.add("active");
@@ -467,13 +462,14 @@
         // Chart.js automatically handles resizing if responsive is true
       });
     </script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js"
       integrity="sha512-6BTOlkauINO65nLhXhthZMtepgJSghyimIalb+crKRPhvhmsCdnIuGcVbR5/aQY2A+260iC1OPy1oCdB6pSSwQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="js/include.js"></script>
+    <script src="js/include.js" defer></script>
     <script src="js/theme.js"></script>
     <script src="js/rtl.js"></script>
     <script src="js/aos-init.js"></script>
