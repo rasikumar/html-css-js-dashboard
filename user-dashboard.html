@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
@@ -83,7 +83,7 @@
         </h1>
       </a>
 
-      <nav class="space-y-4 text-sm">
+      <nav class="space-y-4 text-sm my-10">
         <a href="#" class="block font-semibold text-primary">Dashboard</a>
         <a href="#" class="block hover:text-primary">My Projects</a>
         <a href="#" class="block hover:text-primary">My Galleries</a>
@@ -92,12 +92,11 @@
         <a href="#" class="block hover:text-primary">Profile</a>
       </nav>
 
-      <div class="mt-20 text-sm">
-        <a href="index.html" class="underline">Logout</a>
-      </div>
-      <div class="mt-4 text-sm">
-        <a href="admin-dashboard.html" class="underline">Admin Dashboard</a>
-      </div>
+      <a
+        href="index.html"
+        class="no-underline font-semibold w-full text-sm bg-primary text-black px-4 py-2 rounded-lg"
+        >Logout</a
+      >
     </aside>
 
     <!-- ================= MOBILE SIDEBAR ================= -->
@@ -191,56 +190,103 @@
           >Logout</a
         >
       </div>
-      <div class="mt-4 text-sm">
-        <a href="user-dashboard.html" class="underline">User Dashboard</a>
-      </div>
     </aside>
 
     <!-- ================= USER HEADER ================= -->
     <header
       class="lg:ml-64 bg-white dark:bg-gray-900 border-b dark:border-gray-800 px-4 sm:px-6 py-4 flex justify-between items-center sticky top-0 z-40"
     >
-      <!-- Mobile Menu Button -->
-      <button
-        onclick="openMobileSidebar()"
-        class="lg:hidden mr-4 text-gray-600 dark:text-gray-300"
-      >
-        <svg
-          class="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
+      <!-- Left: Mobile Menu + Title -->
+      <div class="flex items-center gap-3">
+        <!-- Mobile Menu Button -->
+        <button
+          onclick="openMobileSidebar()"
+          class="lg:hidden text-gray-600 dark:text-gray-300"
         >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"
-          />
-        </svg>
-      </button>
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
 
-      <h1 class="text-lg sm:text-xl font-semibold truncate">
-        Welcome back, Sarah
-      </h1>
+        <h1 class="text-md sm:text-xl font-semibold truncate">
+          Welcome back, Sarah
+        </h1>
+      </div>
 
+      <!-- Right Actions -->
       <div class="flex items-center gap-2 sm:gap-3">
         <button
           onclick="toggleTheme()"
-          class="text-sm border px-2 sm:px-3 py-1 rounded text-xs sm:text-sm"
+          class="border px-2 sm:px-3 py-1 rounded text-xs sm:text-sm"
         >
-          Theme
+          <svg
+            class="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-gray-400 group-hover:text-primary transition-colors hidden dark:block"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <svg
+            class="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-gray-400 group-hover:text-primary transition-colors block dark:hidden"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+            />
+          </svg>
         </button>
 
         <button
           onclick="toggleRTL()"
-          class="text-sm border px-2 sm:px-3 py-1 rounded text-xs sm:text-sm"
+          class="border px-2 sm:px-3 py-1 rounded text-xs sm:text-sm"
         >
-          RTL
+          <svg
+            class="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-gray-400 group-hover:text-primary transition-colors"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M7 2a1 1 0 011 1v1h3a1 1 0 110 2H9.578a18.87 18.87 0 01-1.724 4.78c.29.354.596.696.914 1.026a1 1 0 11-1.44 1.389c-.188-.196-.373-.396-.554-.6a19.098 19.098 0 01-3.107 3.567 1 1 0 01-1.334-1.49 17.087 17.087 0 003.13-3.733 18.992 18.992 0 01-1.487-2.494 1 1 0 111.79-.89c.234.47.489.928.764 1.372.417-.934.752-1.913.997-2.927H3a1 1 0 110-2h3V3a1 1 0 011-1zm6 6a1 1 0 01.894.553l2.991 5.982a.839.839 0 01.02.037l.99 1.98a1 1 0 11-1.79.895L15.383 16h-4.764l-.724 1.447a1 1 0 11-1.788-.894l.99-1.98.019-.038 2.99-5.982A1 1 0 0113 8zm-1.382 6h2.764L13 11.236 11.618 14z"
+              clip-rule="evenodd"
+            />
+          </svg>
         </button>
 
-        <span class="text-sm font-medium hidden sm:inline">Sarah</span>
-        <span class="text-sm font-medium sm:hidden">S</span>
+        <!-- Desktop Name -->
+        <span class="hidden sm:inline text-sm font-medium"> Sarah </span>
+
+        <!-- Mobile Profile Icon -->
+        <button
+          class="sm:hidden w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center"
+          aria-label="User profile"
+        >
+          <svg
+            class="w-5 h-5 text-primary"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 2a4 4 0 100 8 4 4 0 000-8zm-7 16a7 7 0 0114 0H3z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
       </div>
     </header>
 
@@ -444,7 +490,7 @@
       document.addEventListener("click", (e) => {
         const mobileSidebar = document.getElementById("mobileSidebar");
         const mobileMenuButton = document.querySelector(
-          "header button.lg\\:hidden"
+          "header button.lg\\:hidden",
         );
 
         if (
